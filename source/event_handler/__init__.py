@@ -11,17 +11,18 @@ class EventHandler(object):
 
     def __init__(self):
         self.config = Config(__name__)
-        self.smtp_server = self.config["EMIS_SMTP_SERVER"]
-        self.smtp_port = self.config["EMIS_SMTP_PORT"]
-        self.smtp_sender = self.config["EMIS_SMTP_SENDER"]
 
 
     def send_mail(self,
             recipients,
             subject,
             message):
+        smtp_server = self.config["EMIS_SMTP_SERVER"]
+        smtp_port = self.config["EMIS_SMTP_PORT"]
+        smtp_sender = self.config["EMIS_SMTP_SENDER"]
+
         send_mail_(
-            self.smtp_server, self.smtp_port, self.smtp_sender,
+            smtp_server, smtp_port, smtp_sender,
             recipients, subject, message)
 
 
