@@ -7,9 +7,9 @@ class Configuration:
     EMIS_RABBITMQ_DEFAULT_PASS = os.environ.get("EMIS_RABBITMQ_DEFAULT_PASS")
     EMIS_RABBITMQ_DEFAULT_VHOST = os.environ.get("EMIS_RABBITMQ_DEFAULT_VHOST")
 
-    EMIS_SMTP_SERVER = "mail.pcraster.eu"
-    EMIS_SMTP_PORT = 25
-    EMIS_SMTP_SENDER = "emis@pcraster.eu"
+    EMIS_SMTP_SERVER = os.environ.get("EMIS_SMTP_SERVER")
+    EMIS_SMTP_PORT = os.environ.get("EMIS_SMTP_PORT")
+    EMIS_SMTP_SENDER = os.environ.get("EMIS_SMTP_SENDER")
 
 
     @staticmethod
