@@ -11,6 +11,8 @@ class Configuration:
     EMIS_SMTP_PORT = os.environ.get("EMIS_SMTP_PORT")
     EMIS_SMTP_SENDER = os.environ.get("EMIS_SMTP_SENDER")
 
+    EMIS_LOG_HOST = "log"
+
 
     @staticmethod
     def init_app(
@@ -20,17 +22,17 @@ class Configuration:
 
 class DevelopmentConfiguration(Configuration):
 
-    pass
+    EMIS_LOG_PORT = 5000
 
 
 class TestingConfiguration(Configuration):
 
-    pass
+    EMIS_LOG_PORT = 5000
 
 
 class ProductionConfiguration(Configuration):
 
-    pass
+    EMIS_LOG_PORT = 3031
 
 
 configuration = {
