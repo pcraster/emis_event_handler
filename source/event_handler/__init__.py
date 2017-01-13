@@ -15,6 +15,7 @@ class EventHandler(object):
 
     def logs_uri(self,
             route):
+        route = route.lstrip("/")
         return "http://{}:{}/{}".format(
             self.config["EMIS_LOG_HOST"],
             self.config["EMIS_LOG_PORT"],
@@ -58,7 +59,7 @@ class EventHandler(object):
 
         except Exception as exception:
 
-            sys.stderr.write("{}\n".format(traceback.format_exc(exception)));
+            sys.stderr.write("{}\n".format(traceback.format_exc()))
             sys.stderr.flush()
 
 
@@ -79,7 +80,7 @@ class EventHandler(object):
 
     ###     except Exception as exception:
 
-    ###         sys.stderr.write("{}\n".format(traceback.format_exc(exception)));
+    ###         sys.stderr.write("{}\n".format(traceback.format_exc()))
     ###         sys.stderr.flush()
 
 
@@ -100,7 +101,7 @@ class EventHandler(object):
 
     ###     except Exception as exception:
 
-    ###         sys.stderr.write("{}\n".format(traceback.format_exc(exception)));
+    ###         sys.stderr.write("{}\n".format(traceback.format_exc()))
     ###         sys.stderr.flush()
 
 
