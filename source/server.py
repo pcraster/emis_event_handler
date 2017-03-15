@@ -1,5 +1,9 @@
 import os
-from event_handler import create_app
+from emis_event_handler import create_app
 
 
-app = create_app(os.getenv("EMIS_EVENT_HANDLER_CONFIGURATION"))
+os.environ["EMIS_CONFIGURATION"] = \
+    os.environ.get("EMIS_CONFIGURATION") or "production"
+app = create_app(os.getenv("EMIS_CONFIGURATION"))
+
+app.run(host="0.0.0.0")

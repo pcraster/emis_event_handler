@@ -1,5 +1,5 @@
 import unittest
-from event_handler import create_app
+from emis_event_handler import create_app
 
 
 class AppTest(unittest.TestCase):

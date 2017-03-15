@@ -11,7 +11,7 @@ class Configuration:
     EMIS_SMTP_PORT = os.environ.get("EMIS_SMTP_PORT")
     EMIS_SMTP_SENDER = os.environ.get("EMIS_SMTP_SENDER")
 
-    EMIS_LOG_HOST = "log"
+    EMIS_LOG_HOST = "emis_log"
 
 
     @staticmethod
@@ -25,7 +25,7 @@ class DevelopmentConfiguration(Configuration):
     EMIS_LOG_PORT = 5000
 
 
-class TestingConfiguration(Configuration):
+class TestConfiguration(Configuration):
 
     EMIS_LOG_PORT = 5000
 
@@ -37,6 +37,7 @@ class ProductionConfiguration(Configuration):
 
 configuration = {
     "development": DevelopmentConfiguration,
-    "testing": TestingConfiguration,
+    "test": TestConfiguration,
+    "acceptance": ProductionConfiguration,
     "production": ProductionConfiguration
 }
